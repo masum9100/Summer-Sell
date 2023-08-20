@@ -18,10 +18,12 @@
             <div class="grid grid-cols-1 md:grid-cols-2 max-w-screen-xl mx-auto">
                 <div class=" items-center text-center my-auto">
                     <p class="text-3xl font-medium mb-10">---SALE FEVER---</p>
-                    <p class="font-bold text-6xl mb-10">Purchase TK 200 or above & get <span class="text-[#E526B2]">20% off</span></p>
+                    <p class="font-bold text-6xl mb-10">Purchase TK 200 or above & get <span class="text-[#E526B2]">20%
+                            off</span></p>
                     <div class="flex justify-center">
                         <p class="text-2xl font-medium py-2">Use Promo Code</p>
-                        <button class="ml-2 text-2xl font-semibold bg-[#E526B2] rounded-md text-white px-4 py-2">SELL200</button>
+                        <button
+                            class="ml-2 text-2xl font-semibold bg-[#E526B2] rounded-md text-white px-4 py-2">SELL200</button>
                     </div>
                 </div>
                 <div class="">
@@ -54,7 +56,8 @@
                             </div>
                         </div>
                         <div class="text-center mt-4 font-semibold text-sm">
-                            <button onclick="handleClickBtn(this)">K. Accessories</button>
+                            <button onclick="handleClickBtn(this)" class="text-center mt-4 font-semibold text-sm">K.
+                                Accessories</button>
                         </div>
                         <p class="mt-4 text-center font-normal text-sm text-[#888888]">39.00 TK</p>
                     </div>
@@ -219,27 +222,53 @@
                         <p class="mt-4 text-center font-normal text-sm text-[#888888]">339.00 TK</p>
                     </div>
                 </div>
-                
+
             </div>
             <!-- area  -->
             <div class="w-[300px] mx-auto">
                 <div class="sm:mt-10 md:mt-10 lg:mt-16 bg-white py-5 px-7 rounded-md">
                     <p>Have coupon?</p>
-                    <input class="mt-2 rounded-s-md text-center py-2 border-2 font-normal text-sm text-[#888888]" type="text" placeholder="Coupon code">
-                    <button class="bg-[#E526B2] px-5 rounded-e-md ml-[-7px] text-center py-2 border-2 border-[#E526B2] text-white font-semibold text-sm">Apply</button>
+                    <input class="mt-2 rounded-s-md text-center py-2 border-2 font-normal text-sm text-[#888888]"
+                        type="text" placeholder="Coupon code" id="coupon-field">
+                    <button
+                        class="bg-[#888888] px-5 rounded-e-md ml-[-7px] text-center py-2 border-2 border-[#888888] text-white font-semibold text-sm"
+                        id="coupon-button" onclick="applyCoupon()">Apply</button>
                 </div>
                 <div class="sm:mt-10 md:mt-10 lg:mt-16 bg-white py-5 px-7 rounded-md">
                     <div class="mt-4" id="selected-items">
 
                     </div>
                     <hr class="mt-4">
-                    <p class="font-semibold mt-4 text-sm">Total Price: <span class="font-semibold text-sm text-[#888888]">00 Tk</span> </p>
-                    <p class="font-semibold mt-4 text-sm">Discount: <span class="font-semibold text-sm text-[#888888]">00 Tk</span> </p>
-                    <p class="font-semibold mt-4 text-sm">Total: <span class="font-semibold text-sm text-[#888888]">00 Tk</span> </p>
+                    <p class="font-semibold mt-4 text-sm">Total Price: <span
+                            class="font-semibold text-sm text-[#888888]" id="total-price">00.00 </span> <span
+                            class="font-semibold text-sm text-[#888888]">TK</span> </p>
+                    <p class="font-semibold mt-4 text-sm">Discount: <span
+                            class="font-semibold text-sm text-[#888888]" id="discount-amount">00.00</span> <span
+                            class="font-semibold text-sm text-[#888888]">TK</span> </p>
+                    <p class="font-semibold mt-4 text-sm">Total: <span
+                            class="font-semibold text-sm text-[#888888]">00.00</span> <span
+                            class="font-semibold text-sm text-[#888888]">TK</span> </p>
                     <hr class="mt-4">
-                    <button class="w-[250px] mt-4 bg-[#E526B2] px-5 rounded-md text-center py-2 text-white font-semibold text-sm">Make Purchase</button>
+                    <button
+                        class="w-[250px] mt-4 bg-[#888888] px-5 rounded-md text-center py-2 text-white font-semibold text-sm"
+                        id="buy-button" onclick="my_modal_5.showModal()">Make Purchase</button>
+
+                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                        <form method="dialog" class="modal-box">
+                            <div class="flex justify-center my-10">
+                                <img src="images/congo.png" alt="">
+                            </div>
+                            <h3 class="font-bold text-5xl text-center">Congratulations</h3>
+                            <p class="py-4 font-normal text-xl text-center text-[#888888]">Your Purchase the product</p>
+                            <div class="modal-action flex justify-center">
+                                <!-- if there is a button in form, it will close the modal -->
+                                <a class="w-[100px] mt-2 mb-10 bg-[#E526B2] px-2 rounded-md text-center py-2 text-white font-semibold text-sm"
+                                    href="index.html">Go Home</a>
+                            </div>
+                        </form>
+                    </dialog>
                 </div>
-    
+
             </div>
         </section>
     </main>
