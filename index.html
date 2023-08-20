@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -9,9 +9,22 @@
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    
+    <style>
+        .font-work-sans{
+            font-family: 'Work Sans', sans-serif;
+        }
+    </style>
+
 </head>
 
-<body>
+<body class="font-work-sans">
 
     <head>
         <div class="bg-[#F9F6E2]">
@@ -228,7 +241,7 @@
             <div class="w-[300px] mx-auto">
                 <div class="sm:mt-10 md:mt-10 lg:mt-16 bg-white py-5 px-7 rounded-md">
                     <p>Have coupon?</p>
-                    <input class="mt-2 rounded-s-md text-center py-2 border-2 font-normal text-sm text-[#888888]"
+                    <input class="mt-2 rounded-s-md text-center py-2 border-2 font-normal text-sm text-black"
                         type="text" placeholder="Coupon code" id="coupon-field">
                     <button
                         class="bg-[#888888] px-5 rounded-e-md ml-[-7px] text-center py-2 border-2 border-[#888888] text-white font-semibold text-sm"
@@ -242,8 +255,8 @@
                     <p class="font-semibold mt-4 text-sm">Total Price: <span
                             class="font-semibold text-sm text-[#888888]" id="total-price">00.00 </span> <span
                             class="font-semibold text-sm text-[#888888]">TK</span> </p>
-                    <p class="font-semibold mt-4 text-sm">Discount: <span
-                            class="font-semibold text-sm text-[#888888]" id="discount-amount">00.00</span> <span
+                    <p class="font-semibold mt-4 text-sm">Discount: <span class="font-semibold text-sm text-[#888888]"
+                            id="discount-amount">00.00</span> <span
                             class="font-semibold text-sm text-[#888888]">TK</span> </p>
                     <p class="font-semibold mt-4 text-sm">Total: <span
                             class="font-semibold text-sm text-[#888888]">00.00</span> <span
