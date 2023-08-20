@@ -1,7 +1,7 @@
 let serialNum = 1;
 let totalPrice = 0;
 
-function handleClickBtn(masum){
+function handleClickBtn(masum) {
     const selectItemList = document.getElementById("selected-items");
     const itemName = masum.parentNode.childNodes[1].innerText;
     const p = document.createElement("p");
@@ -12,14 +12,16 @@ function handleClickBtn(masum){
     const price = masum.parentNode.parentNode.childNodes[7].innerText.split(' ')[0];
     totalPrice = parseFloat(totalPrice) + parseFloat(price);
     totalPrice = totalPrice.toFixed(2);
-    
-    const firstTotalPrice = document.getElementById('total-price').innerText=totalPrice;
-    
-    
+
+    const firstTotalPrice = document.getElementById('total-price').innerText = totalPrice;
+    const finalTotalPriceElement = document.getElementById('final-total-price');
+    finalTotalPriceElement.innerText = totalPrice;
+
+
     const buyButton = document.getElementById("buy-button");
     if (totalPrice > 0) {
         buyButton.removeAttribute("disabled");
-        buyButton.style.backgroundColor = "#E526B2"; 
+        buyButton.style.backgroundColor = "#E526B2";
     } else {
         buyButton.setAttribute("disabled", "true");
         buyButton.style.backgroundColor = "#888888";
@@ -28,25 +30,32 @@ function handleClickBtn(masum){
     const couponButton = document.getElementById("coupon-button");
     if (totalPrice > 199) {
         couponButton.removeAttribute("disabled");
-        couponButton.style.backgroundColor = "#E526B2"; 
-        couponButton.style.borderColor = "#E526B2]"; 
+        couponButton.style.backgroundColor = "#E526B2";
+        couponButton.style.borderColor = "#E526B2]";
     } else {
         couponButton.setAttribute("disabled", "true");
         couponButton.style.backgroundColor = "#888888";
     }
-
     
+
 }
 
 function applyCoupon() {
-    const couponCode = document.getElementById("coupon-field").value;
-    const discountAmount = document.getElementById("discount-amount");
+    const couponCode = document.getElementById('coupon-field').value;
+    const discountAmount = document.getElementById('discount-amount');
+    const finalTotalPriceElement = document.getElementById('final-total-price');
     
-    if (couponCode === "SELL200" && totalPrice > 199) {
+    if (couponCode === 'SELL200' && totalPrice > 199) {
         const discount = (totalPrice * 0.20).toFixed(2);
         discountAmount.innerText = discount;
-    } else {
-        alert('Use a valid COUPON')
         
+        const finalTotalPrice = (totalPrice - discount).toFixed(2);
+        finalTotalPriceElement.innerText = finalTotalPrice;
+    } else {
+        alert('Use a valid COUPON');
+        discountAmount.innerText = '00.00';
+        finalTotalPriceElement.innerText = totalPrice;
     }
 }
+
+
