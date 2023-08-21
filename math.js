@@ -19,6 +19,7 @@ function handleClickBtn(masum) {
 
 
     const buyButton = document.getElementById("buy-button");
+    
     if (totalPrice > 0) {
         buyButton.removeAttribute("disabled");
         buyButton.style.backgroundColor = "#E526B2";
